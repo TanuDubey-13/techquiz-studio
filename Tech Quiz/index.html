@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechQuiz Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-panel" aria-label="Quiz setup">
+      <nav class="topbar">
+        <div class="brand-mark" aria-hidden="true">TQ</div>
+        <div>
+          <p class="eyebrow">B.Tech learning lab</p>
+          <h1>TechQuiz Studio</h1>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <div class="hero-copy">
+          <p class="status-pill">MCQ practice </p>
+          <h2>Pick a tech topic. Get a focused quiz instantly.</h2>
+          <p class="intro">Practice core engineering subjects, programming, web, AI, data structures, networking, and interview-ready concepts with crisp explanations.</p>
+        </div>
+
+        <form id="quizForm" class="setup-card">
+          <label for="topicInput">What topic do you want?</label>
+          <div class="topic-row">
+            <input id="topicInput" type="text" placeholder="e.g. DBMS, Java, Machine Learning" autocomplete="off" />
+            <button type="submit">Start</button>
+          </div>
+          <div class="quick-topics" aria-label="Suggested topics">
+            <button type="button" data-topic="Data Structures">Data Structures</button>
+            <button type="button" data-topic="DBMS">DBMS</button>
+            <button type="button" data-topic="Operating Systems">OS</button>
+            <button type="button" data-topic="Computer Networks">Networks</button>
+            <button type="button" data-topic="JavaScript">JavaScript</button>
+            <button type="button" data-topic="Machine Learning">ML</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="quiz-workspace">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Current session</p>
+          <h2 id="quizTitle">Choose a topic to begin</h2>
+        </div>
+        <div class="score-chip"><span id="scoreValue">0</span>/<span id="totalValue">0</span></div>
+      </div>
+
+      <div class="progress-track" aria-hidden="true"><div id="progressBar"></div></div>
+
+      <article id="questionCard" class="question-card empty-state">
+        <div class="empty-visual">
+          <span></span><span></span><span></span>
+        </div>
+        <h3>Your quiz will appear here</h3>
+        <p>Type any B.Tech or tech topic, then answer the MCQs one by one. You will get instant feedback and a final score.</p>
+      </article>
+
+      <div id="resultCard" class="result-card hidden"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
